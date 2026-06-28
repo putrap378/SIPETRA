@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Bantuan - SIPETRA</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="d-flex">
+
+    <!-- Sidebar -->
+    <div class="bg-primary text-white p-3" style="width:250px; min-height:100vh;">
+
+        <h3 class="text-center mb-4">SIPETRA</h3>
+
+        <ul class="nav flex-column">
+
+            <li class="nav-item mb-2">
+                <a href="dashboard.html" class="nav-link text-white">
+                    <i class="bi bi-house"></i> Dashboard
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a href="bantuan.html" class="nav-link bg-white text-primary rounded">
+                    <i class="bi bi-box"></i> Data Bantuan
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a href="pengaduan.html" class="nav-link text-white">
+                    <i class="bi bi-chat-dots"></i> Pengaduan
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a href="tracking.html" class="nav-link text-white">
+                    <i class="bi bi-geo-alt"></i> Tracking
+                </a>
+            </li>
+
+            <li class="nav-item mb-2">
+                <a href="laporan.html" class="nav-link text-white">
+                    <i class="bi bi-file-earmark-text"></i> Laporan
+                </a>
+            </li>
+
+            <hr>
+
+            <li class="nav-item">
+                <a href="index.html" class="nav-link text-white">
+                    <i class="bi bi-box-arrow-right"></i> Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Content -->
+    <div class="flex-grow-1 p-4">
+
+        <h2 class="mb-4">Data Bantuan</h2>
+
+        <button
+            class="btn btn-primary mb-3"
+            data-bs-toggle="modal"
+            data-bs-target="#modalTambah">
+
+            <i class="bi bi-plus-circle"></i>
+            Tambah Bantuan
+
+        </button>
+
+        <input
+            type="text"
+            id="searchInput"
+            class="form-control mb-3"
+            placeholder="Cari berdasarkan Nama atau NIK">
+
+        <table class="table table-bordered table-hover">
+
+            <thead class="table-primary">
+
+                <tr>
+                    <th width="60">No</th>
+                    <th>Nama</th>
+                    <th>NIK</th>
+                    <th>Jenis</th>
+                    <th>Status</th>
+                    <th width="170">Aksi</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="tbodyBantuan">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalTambah" tabindex="-1">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h5 class="modal-title">
+                    Tambah Bantuan
+                </h5>
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal">
+                </button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Nama
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nama"
+                        class="form-control">
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        NIK
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nik"
+                        class="form-control">
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Jenis Bantuan
+                    </label>
+
+                    <select
+                        id="jenis"
+                        class="form-select">
+
+                        <option>PKH</option>
+                        <option>BLT</option>
+                        <option>BPNT</option>
+
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Status
+                    </label>
+
+                    <select
+                        id="status"
+                        class="form-select">
+
+                        <option>Diproses</option>
+                        <option>Selesai</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+                <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal">
+
+                    Batal
+
+                </button>
+
+                <button
+                    type="button"
+                    class="btn btn-success"
+                    onclick="simpanData()">
+
+                    Simpan
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JavaScript -->
+<script src="js/bantuan.js"></script>
+
+<footer class="text-center mt-5 mb-3 text-muted">
+
+<hr>
+
+SIPETRA © 2026
+
+</footer>
+
+</body>
+</html>
